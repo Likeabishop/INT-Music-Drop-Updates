@@ -21,15 +21,26 @@ public class Song implements Serializable {
     private String genre;
     @Temporal(TemporalType.TIMESTAMP)
     private Date releaseDate;
+    @Temporal(TemporalType.DATE)
+    private Date creationDate;
 
     public Song() {
     }
 
-    public Song(String title, Double duration, String genre, Date releaseDate) {
+    public Song(String title, Double duration, String genre, Date releaseDate, Date creationDate) {
         this.title = title;
         this.duration = duration;
         this.genre = genre;
         this.releaseDate = releaseDate;
+        this.creationDate = creationDate;
+    }
+    
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
     }
 
     public String getTitle() {
