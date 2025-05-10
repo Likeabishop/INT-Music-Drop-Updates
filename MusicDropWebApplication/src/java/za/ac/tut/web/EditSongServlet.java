@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.EJB;
@@ -15,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import za.ac.ejb.Song.Entity.Song;
 import za.ac.ejb.Song.bl.SongFacadeLocal;
 
-public class AddSongServlet extends HttpServlet {
+public class EditSongServlet extends HttpServlet {
     @EJB ArtistFacadeLocal artistSB;
     
     @Override
@@ -23,37 +25,22 @@ public class AddSongServlet extends HttpServlet {
             throws ServletException, IOException {
         try {
             String title = request.getParameter("title");
-            String strDuration = request.getParameter("duration");
-            Double duration = Double.parseDouble(strDuration);
-            String genre = request.getParameter("genre");
             String strReleaseDate = request.getParameter("releaseDate");
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+            int pos = Integer.parseInt(request.getParameter("pos"));
             Date releaseDate = dateFormat.parse(strReleaseDate);
-            
-            Song song = CreateSong(title, duration, genre, releaseDate);
             String idNum = request.getParameter("idNum");
-            
-            Artist artist = artistSB.Find(idNum);
-            artist.getSongs().add(song);
-            
+        
+            Artist artist = artistSB.find(idNum);
+            artist.getSongs().get(pos).setTitle(title);
+            artist.getSongs().get(pos).setReleaseDate(releaseDate);
+        
             artistSB.edit(artist);
-        
-            response.sendRedirect("dashboard.jsp");
         } catch (ParseException ex) {
-            Logger.getLogger(AddSongServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }   
-    }
-
-    private Song CreateSong(String title, Double duration, String genre, Date releaseDate) {
-        Song s = new Song();
+            Logger.getLogger(EditSongServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
-        s.setDuration(duration);
-        s.setGenre(genre);
-        s.setReleaseDate(releaseDate);
-        s.setCreationDate(new Date());
-        s.setTitle(title);
-        
-        return s;
+        response.sendRedirect("dashboard.jsp");
     }
 
 }
