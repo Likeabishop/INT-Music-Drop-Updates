@@ -4,9 +4,33 @@
         <servlet-name>AddSongServlet</servlet-name>
         <servlet-class>za.ac.tut.web.AddSongServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditSongServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.EditSongServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetAllArtistSongsServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.GetAllArtistSongsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteSongServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.DeleteSongServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddSongServlet</servlet-name>
         <url-pattern>/AddSongServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditSongServlet</servlet-name>
+        <url-pattern>/EditSongServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetAllArtistSongsServlet</servlet-name>
+        <url-pattern>/GetAllArtistSongsServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteSongServlet</servlet-name>
+        <url-pattern>/DeleteSongServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
