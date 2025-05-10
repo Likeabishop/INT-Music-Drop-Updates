@@ -23,7 +23,7 @@
 
         <div class="button-group">
             <a href="Sign-up/sign_up.jsp" class="btn">Sign Up</a>
-            <a href="Sign-up/sign_up_admin.jsp" class="btn">Sign Up As Administrator</a>
+            <a href="Sign-up/sign_up_artist.jsp" class="btn">Sign Up As an Artist</a>
             <a href="LoginPage/login.jsp" class="btn">Login</a>
         </div>
     </body>
