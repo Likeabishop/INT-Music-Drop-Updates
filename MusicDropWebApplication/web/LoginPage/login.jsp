@@ -19,7 +19,7 @@
             Log in to your Music Dropped account and stay updated with the latest releases from your favorite artists.
         </p>
 
-        <form class="form-container" action="#" method="post">
+        <form class="form-container" action="LoginServlet.do" method="POST">
             <div class="form-group">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" name="email" required>
