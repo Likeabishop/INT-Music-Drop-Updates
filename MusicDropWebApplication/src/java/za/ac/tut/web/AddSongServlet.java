@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import za.ac.ejb.Artist.Entity.Artist;
 import za.ac.ejb.Artist.bl.ArtistFacadeLocal;
 import za.ac.ejb.Song.Entity.Song;
 import za.ac.ejb.Song.bl.SongFacadeLocal;
@@ -23,7 +24,7 @@ public class AddSongServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            String title = request.getParameter("title");
+            String title = request.getParameter("songTitle");
             String strDuration = request.getParameter("duration");
             Double duration = Double.parseDouble(strDuration);
             String genre = request.getParameter("genre");
@@ -32,9 +33,10 @@ public class AddSongServlet extends HttpServlet {
             Date releaseDate = dateFormat.parse(strReleaseDate);
             
             Song song = CreateSong(title, duration, genre, releaseDate);
+            
             String idNum = request.getParameter("idNum");
             
-            Artist artist = artistSB.Find(idNum);
+            Artist artist = artistSB.find(idNum);
             artist.getSongs().add(song);
             
             artistSB.edit(artist);

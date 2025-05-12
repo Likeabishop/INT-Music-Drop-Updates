@@ -10,15 +10,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import za.ac.ejb.User.Entity.User;
-import static za.ac.ejb.User.Entity.User_.email;
+import za.ac.ejb.User.Entity.Users;
 
 /**
  *
  * @author mukon
  */
 @Stateless
-public class UserFacade extends AbstractFacade<User> implements UserFacadeLocal {
+public class UserFacade extends AbstractFacade<Users> implements UserFacadeLocal {
 
     @PersistenceContext(unitName = "MusicDropUpdatesEJBModulePU")
     private EntityManager em;
@@ -29,7 +28,7 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeLocal 
     }
 
     public UserFacade() {
-        super(User.class);
+        super(Users.class);
     }
 
   @Override
@@ -57,24 +56,24 @@ public boolean validateRegistration(String password, String confirmPassword) {
 
 
     @Override
-    public boolean isEmailRegistered(String string) 
+    public boolean isEmailRegistered(String email) 
     {
         
-    Query query = em.createQuery("SELECT COUNT(u) FROM User u WHERE u.email = :email");
+    Query query = em.createQuery("SELECT COUNT(u) FROM Users u WHERE u.email = :email");
     query.setParameter("email", email);
     Long count = (Long) query.getSingleResult();
     return count > 0;
 }    
 
     @Override
-    public User findByEmail(String email) 
+    public Users findByEmail(String email) 
     {
         try {
-        String jpql = "SELECT u FROM User u WHERE u.email = :email";
+        String jpql = "SELECT u FROM Users u WHERE u.email = :email";
             Query query =  em.createQuery(jpql);
                  query.setParameter("email", email);
                  
-           User user = (User) query.getSingleResult();
+           Users user = (Users) query.getSingleResult();
            return  user;
     }    catch (NoResultException e) {
         return null; 

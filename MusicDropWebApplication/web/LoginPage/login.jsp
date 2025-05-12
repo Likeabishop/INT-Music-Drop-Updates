@@ -4,13 +4,14 @@
     Author     : user
 --%>
 
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-        <link rel="stylesheet" href="login.css" type="text/css">
+        <title>Login Page</title>
+        <link rel="stylesheet" href="../style.css" type="text/css">
     </head>
     <body>
         <h1>Welcome Back</h1>
@@ -19,7 +20,7 @@
             Log in to your Music Dropped account and stay updated with the latest releases from your favorite artists.
         </p>
 
-        <form class="form-container" action="LoginServlet.do" method="POST">
+        <form class="form-container" action="../LoginServlet.do" method="POST">
             <div class="form-group">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" name="email" required>

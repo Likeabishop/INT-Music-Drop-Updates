@@ -7,6 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import za.ac.ejb.Artist.Entity.Artist;
+import za.ac.ejb.Artist.bl.ArtistFacadeLocal;
 import za.ac.ejb.Song.bl.SongFacadeLocal;
 
 public class GetAllArtistSongsServlet extends HttpServlet {
@@ -14,11 +16,13 @@ public class GetAllArtistSongsServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        
         String idNum = request.getParameter("idNum");
         
         Artist artist = artistSB.find(idNum);
         
-        session.setAttribute("artist");
+        request.setAttribute("artist", artist);
         
         response.sendRedirect("dashboard.jsp");
     }

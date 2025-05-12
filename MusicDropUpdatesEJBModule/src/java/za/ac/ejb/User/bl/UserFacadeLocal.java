@@ -6,7 +6,7 @@ package za.ac.ejb.User.bl;
 
 import java.util.List;
 import javax.ejb.Local;
-import za.ac.ejb.User.Entity.User;
+import za.ac.ejb.User.Entity.Users;
 
 /**
  *
@@ -15,24 +15,24 @@ import za.ac.ejb.User.Entity.User;
 @Local
 public interface UserFacadeLocal {
 
-    void create(User user);
+    void create(Users user);
 
-    void edit(User user);
+    void edit(Users user);
 
-    void remove(User user);
+    void remove(Users user);
 
-    User find(Object id);
+    Users find(Object id);
 
-    List<User> findAll();
+    List<Users> findAll();
 
-    List<User> findRange(int[] range);
+    List<Users> findRange(int[] range);
 
     int count();
     
    public boolean validateRegistration(String password, String confirmPassword);
    public boolean isEmailRegistered(String email);
    
-   User findByEmail(String email);
+   Users findByEmail(String email);
 
 
 

@@ -3,7 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Karabo/INT-Music-Drop-Updates/MusicDropWebApplication/src/java/za/ac/tut/web/AddSongServlet.java</file>
+            <file>file:/D:/Documents/School/Repeat/INT/Project2/INT-Music-Drop-Updatesv5/MusicDropWebApplication/web/LoginPage/login.jsp</file>
+            <file>file:/D:/Documents/School/Repeat/INT/Project2/INT-Music-Drop-Updatesv5/MusicDropWebApplication/src/java/za/ac/tut/web/GetAllArtistsServlet.java</file>
+            <file>file:/D:/Documents/School/Repeat/INT/Project2/INT-Music-Drop-Updatesv5/MusicDropWebApplication/web/DashBoard/dashboard.jsp</file>
+            <file>file:/D:/Documents/School/Repeat/INT/Project2/INT-Music-Drop-Updatesv5/MusicDropWebApplication/web/ArtistPage/artist_page.jsp</file>
         </group>
     </open-files>
 </project-private>

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Update Song</title>
-        <link rel="stylesheet" href="updateSong.css" type="text/css">
+        <link rel="stylesheet" href="../style.css" type="text/css">
     </head>
     <body>
         <h1>Update Existing Song</h1>

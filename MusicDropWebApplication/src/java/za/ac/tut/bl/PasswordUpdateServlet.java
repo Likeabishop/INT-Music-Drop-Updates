@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package za.ac.tut.web;
+package za.ac.tut.bl;
 
 import java.io.IOException;
 import javax.ejb.EJB;
@@ -11,7 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import za.ac.ejb.User.Entity.User;
+import za.ac.ejb.User.Entity.Users;
 import za.ac.ejb.User.bl.UserFacadeLocal;
 
 /**
@@ -52,7 +52,7 @@ private UserFacadeLocal userFacade;
     
   
     
-    User user = userFacade.findByEmail(email);
+    Users user = userFacade.findByEmail(email);
     if (user != null) {
         user.setPassword(newPassword);
         userFacade.edit(user);

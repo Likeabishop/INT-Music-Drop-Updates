@@ -7,71 +7,63 @@
 
 
 
+<%@page import="java.util.List"%>
+<%@page import="za.ac.ejb.Artist.Entity.Artist"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Artists Page</title>
-        <link rel="stylesheet" href="artist_page.css">
+        <link rel="stylesheet" href="../style.css">
     </head>
     <body>
         <h2>🎤 Artists</h2>
-        <%--
-            // Dummy artist data (to be replaced by Artist class and DAO later)
-            class DummyArtist {
 
-                String name, genre, country;
-                int debutYear, albums;
-
-                DummyArtist(String name, String genre, String country, int debutYear, int albums) {
-                    this.name = name;
-                    this.genre = genre;
-                    this.country = country;
-                    this.debutYear = debutYear;
-                    this.albums = albums;
-                }
-            }
-
-            java.util.List<DummyArtist> artistList = new java.util.ArrayList<>();
-            artistList.add(new DummyArtist("Adele", "Pop", "UK", 2006, 4));
-            artistList.add(new DummyArtist("Kendrick Lamar", "Hip Hop", "USA", 2011, 5));
-            artistList.add(new DummyArtist("BTS", "K-Pop", "South Korea", 2013, 9));
-            artistList.add(new DummyArtist("Coldplay", "Alternative Rock", "UK", 2000, 8));
-            artistList.add(new DummyArtist("Taylor Swift", "Pop/Country", "USA", 2006, 10));
-
-            request.setAttribute("artists", artistList);
-        --%>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Genre</th>
-                <th>Country</th>
-                <th>Debut Year</th>
-                <th>Albums</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <c:forEach var="artist" items="${artists}">
+        <table>
+            <thead>
                 <tr>
-                    <td>${artist.name}</td>
-                    <td>${artist.genre}</td>
-                    <td>${artist.country}</td>
-                    <td>${artist.debutYear}</td>
-                    <td>${artist.albums}</td>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Genre</th>
+                    <th>Stage Name</th>
+                    <th>Email</th>
+                    <th>Active Since</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%
+                    List<Artist> artists = (List<Artist>) session.getAttribute("artists");
+                    if (!artists.isEmpty()) {
+                        for (Artist artist : artists) {
+                %>
+                <tr>
+                    <td><%=artist.getFirstname()%></td>
+                    <td><%=artist.getLastname()%></td>
+                    <td><%=artist.getGenre()%></td>
+                    <td><%=artist.getStagename()%></td>
+                    <td><%=artist.getEmail()%></td>
+                    <td><%=artist.getCreationdate()%></td>
                     <td>
-                        <a href="../ViewSong Page/view_songs.jsp?artist=${artist.name}" class="btn">🎵 View Songs</a>
+                        <a href="../ViewSong Page/view_songs.jsp?artist=<%=artist.getFirstname()%>" class="btn">🎵 View Songs</a>
                     </td>
                 </tr>
-            </c:forEach>
-        </tbody>
-    </table>
+                <%
+                    }
+                } else {
+                %>
+                <tr>
+                    <td colspan="7">No artists found.</td>
+                </tr>
+                <%
+                    }
+                %>
 
-    <div class="button-group">
-        <a href="dashboard.jsp" class="btn">🏠 Back to Dashboard</a>
-    </div>
-</body>
+            </tbody>
+        </table>
+
+        <div class="button-group">
+            <a href="../DashBoard/dashboard.jsp" class="btn">🏠 Back to Dashboard</a>
+        </div>
+    </body>
 </html>

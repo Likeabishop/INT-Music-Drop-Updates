@@ -20,6 +20,14 @@
         <servlet-name>RegArtistServlet</servlet-name>
         <servlet-class>za.ac.tut.web.RegArtistServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetAllArtistsServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.GetAllArtistsServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddSongServlet</servlet-name>
         <url-pattern>/AddSongServlet.do</url-pattern>
@@ -45,16 +53,12 @@
         <servlet-class>za.ac.tut.web.AddUserServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>LogInServlet</servlet-name>
-        <servlet-class>za.ac.tut.web.LogInServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>PasswordResetServlet</servlet-name>
-        <servlet-class>za.ac.tut.web.PasswordResetServlet</servlet-class>
+        <servlet-class>za.ac.tut.bl.PasswordResetServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>PasswordUpdateServlet</servlet-name>
-        <servlet-class>za.ac.tut.web.PasswordUpdateServlet</servlet-class>
+        <servlet-class>za.ac.tut.bl.PasswordUpdateServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ViewUserServlet</servlet-name>
@@ -63,10 +67,6 @@
     <servlet-mapping>
         <servlet-name>AddUserServlet</servlet-name>
         <url-pattern>/AddUserServlet.do</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>LogInServlet</servlet-name>
-        <url-pattern>/LogInServlet.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PasswordResetServlet</servlet-name>
@@ -79,6 +79,14 @@
     <servlet-mapping>
         <servlet-name>RegArtistServlet</servlet-name>
         <url-pattern>/RegArtistServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetAllArtistsServlet</servlet-name>
+        <url-pattern>/GetAllArtistsServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

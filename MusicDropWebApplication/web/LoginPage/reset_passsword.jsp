@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Reset Page</title>
-        <link rel="stylesheet" href="login.css" type="text/css">
+        <link rel="stylesheet" href="../style.css" type="text/css">
     </head>
     <body>
         <h1>Reset Your Password</h1>

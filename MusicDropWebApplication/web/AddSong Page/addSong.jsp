@@ -19,7 +19,7 @@
             Fill out the form below to upload a new song to the platform. Ensure that all fields are accurate before submission.
         </p>
 
-        <form class="form-container" action="#" method="post">
+        <form class="form-container" action="../AddSongServlet.do" method="post">
             
             <div class="form-group">
                 <label for="songTitle">Song Title</label>

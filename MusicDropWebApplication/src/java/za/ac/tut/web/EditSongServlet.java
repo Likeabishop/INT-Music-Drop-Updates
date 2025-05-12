@@ -14,6 +14,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import za.ac.ejb.Artist.Entity.Artist;
+import za.ac.ejb.Artist.bl.ArtistFacadeLocal;
 import za.ac.ejb.Song.Entity.Song;
 import za.ac.ejb.Song.bl.SongFacadeLocal;
 

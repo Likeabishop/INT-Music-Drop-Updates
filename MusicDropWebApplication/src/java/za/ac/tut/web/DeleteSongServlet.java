@@ -9,6 +9,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import za.ac.ejb.Artist.Entity.Artist;
+import za.ac.ejb.Artist.bl.ArtistFacadeLocal;
 import za.ac.ejb.Song.Entity.Song;
 import za.ac.ejb.Song.bl.SongFacadeLocal;
 
@@ -19,9 +21,13 @@ public class DeleteSongServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Artist artist = artistSB.Find(idNum);
+        
+        Long idNum = Long.parseLong(request.getParameter("id"));
+        
+        Artist artist = artistSB.find(idNum);
         int pos = Integer.parseInt(request.getParameter("pos"));
         Song song = artist.getSongs().remove(pos);
+        
         songSB.remove(song);
         
         response.sendRedirect("dashboard.jsp");
