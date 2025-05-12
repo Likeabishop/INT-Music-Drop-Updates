@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>All Songs Page</title>
-        <link rel="stylesheet" href="view_songs.css">
+        <link rel="stylesheet" href="../style.css">
     </head>
     <body>
     <h2>🎵 All Songs</h2>

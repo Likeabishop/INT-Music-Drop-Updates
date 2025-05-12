@@ -20,9 +20,10 @@ import javax.persistence.TemporalType;
  * @author mukon
  */
 @Entity
-public class User implements Serializable {
+public class Users implements Serializable {
 
     @Id
+    @GeneratedValue
     private Long id;
     
     private String name;
@@ -39,11 +40,10 @@ public class User implements Serializable {
    
     
     
-    public User() {
+    public Users() {
     }
 
-    public User(Long id, String name, String surname, int age, String email, String artist, String password, Date creationDate) {
-        this.id = id;
+    public Users(String name, String surname, int age, String email, String artist, String password, Date creationDate) {
         this.name = name;
         this.surname = surname;
         this.age = age;
@@ -133,10 +133,10 @@ public class User implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof User)) {
+        if (!(object instanceof Users)) {
             return false;
         }
-        User other = (User) object;
+        Users other = (Users) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

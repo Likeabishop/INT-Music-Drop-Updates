@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="sign_up.css" type="text/css">
+        <link rel="stylesheet" href="../style.css" type="text/css">
     </head>
     <body>
         <h1>Create Your Account</h1>
@@ -19,7 +19,7 @@
             Join the Music Dropped community to follow your favorite artists and never miss a new release.
         </p>
 
-        <form class="form-container" action="#" method="post">
+        <form class="form-container" action="../AddUserServlet.do" method="post">
             <div class="form-group">
                 <label for="name">First Name</label>
                 <input type="text" id="name" name="name" required>

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Delete Song</title>
-        <link rel="stylesheet" href="deleteSong.css" type="text/css">
+        <link rel="stylesheet" href="../style.css" type="text/css">
     </head>
     <body>
         <h1>Delete Song</h1>

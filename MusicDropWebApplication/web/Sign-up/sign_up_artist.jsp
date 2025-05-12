@@ -7,7 +7,7 @@
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <title>JSP Page</title>
-            <link rel="stylesheet" href="sign_up.css" type="text/css">
+            <link rel="stylesheet" href="../style.css" type="text/css">
         </head>
 
         <body>
@@ -19,17 +19,17 @@
             </p>
 
 
-            <form class="form-container" action="" method="post">
+            <form class="form-container" action="../RegArtistServlet.do" method="post">
 
                 <form class="form-container" action="" method="post">
                     <div class="form-group">
                         <label for="artistName">Artist ID number:</label>
-                        <input type="text" id="artistName" name="artistName" required>
+                        <input type="text" id="artistName" name="id" required>
                     </div>
 
                     <div class="form-group">
                         <label for="artistName">Artist Name</label>
-                        <input type="text" id="adminName" name="adminName" required>
+                        <input type="text" id="adminName" name="name" required>
                     </div>
 
                     <div class="form-group">
@@ -43,16 +43,6 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="artistGenre">Artist Genre</label>
-                        <input type="text" id="artistGenre" name="artistGenre" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="adminEmail">Email Address</label>
-                        <input type="email" id="adminEmail" name="adminEmail" required>
-                    </div>
-
-                    <div class="form-group">
                         <select name="genre">
                             <option value="Amapiano">Amapiano</option>
                             <option value="HipHop">HipHop</option>
@@ -60,6 +50,18 @@
                             <option value="Maskandi">Maskandi</option>
                         </select>
                     </div>
+
+                    <div class="form-group">
+                        <label for="adminEmail">Email Address</label>
+                        <input type="email" id="adminEmail" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="adminPassword">Email Address</label>
+                        <input type="email" id="adminPassword" name="adminPassword" required>
+                    </div>
+
+                    
 
                     <button type="submit" class="btn">Sign Up as Artist</button>
 

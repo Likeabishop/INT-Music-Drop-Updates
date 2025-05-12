@@ -1,4 +1,4 @@
-package za.ac.tut.web;
+package za.ac.tut.bl;
 
 import java.io.IOException;
 import javax.ejb.EJB;

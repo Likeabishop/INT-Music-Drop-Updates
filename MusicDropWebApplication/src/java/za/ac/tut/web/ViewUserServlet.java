@@ -12,7 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import za.ac.ejb.User.Entity.User;
+import za.ac.ejb.User.Entity.Users;
 import za.ac.ejb.User.bl.UserFacadeLocal;
 
 
@@ -38,7 +38,7 @@ public class ViewUserServlet extends HttpServlet {
             throws ServletException, IOException
     {
         
-      List<User> users = userFacade.findAll();
+      List<Users> users = userFacade.findAll();
       
       response.sendRedirect("");
    

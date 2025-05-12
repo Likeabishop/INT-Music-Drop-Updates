@@ -29,7 +29,7 @@ public class Artist implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Column(name = "ID_NUMBER")
-    private String id;
+    private Long id;
     private String firstname;
     private String lastname;
     private String stagename;
@@ -46,7 +46,7 @@ public class Artist implements Serializable {
     public Artist() {
     }
 
-    public Artist(String id, String firstname, String lastname, String stagename, String genre, String email, String password, Date creationdate) {
+    public Artist(Long id, String firstname, String lastname, String stagename, String genre, String email, String password, List<Song> songs, Date creationdate) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -54,8 +54,16 @@ public class Artist implements Serializable {
         this.genre = genre;
         this.email = email;
         this.password = password;
-        
-        this.creationdate = creationdate;
+        this.songs = songs;
+        creationdate = new Date();
+    }
+
+    public List<Song> getSongs() {
+        return songs;
+    }
+
+    public void setSongs(List<Song> songs) {
+        this.songs = songs;
     }
 
     public String getFirstname() {
@@ -121,11 +129,11 @@ public class Artist implements Serializable {
     
     
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

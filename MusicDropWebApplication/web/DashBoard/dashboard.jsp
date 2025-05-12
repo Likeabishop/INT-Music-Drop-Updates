@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Artist Dashboard</title>
-        <link rel="stylesheet" href="dashboard.css" type="text/css">
+        <link rel="stylesheet" href="../style.css" type="text/css">
     </head>
     <body>
         <h1>Welcome to Your Artist Dashboard</h1>
@@ -25,6 +25,11 @@
                 <div class="dashboard-card">
                     <h3>Delete Song</h3>
                     <a href="../DeleteSong Page/deleteSong.jsp">Go</a>
+                </div>
+                
+                <div class="dashboard-card">
+                    <h3>View All Artists</h3>
+                    <a href="../GetAllArtistsServlet.do">Go</a>
                 </div>
             </div>
         </div>
