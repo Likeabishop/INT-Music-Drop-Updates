@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
-
         <servlet-name>AddSongServlet</servlet-name>
         <servlet-class>za.ac.tut.web.AddSongServlet</servlet-class>
     </servlet>
@@ -16,6 +15,10 @@
     <servlet>
         <servlet-name>DeleteSongServlet</servlet-name>
         <servlet-class>za.ac.tut.web.DeleteSongServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegArtistServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.RegArtistServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AddSongServlet</servlet-name>
@@ -32,9 +35,7 @@
     <servlet-mapping>
         <servlet-name>DeleteSongServlet</servlet-name>
         <url-pattern>/DeleteSongServlet.do</url-pattern>
-
-        
-    </servlet>
+    </servlet-mapping>
     <servlet>
         <servlet-name>ViewUserServlet</servlet-name>
         <servlet-class>za.ac.tut.web.ViewUserServlet</servlet-class>
@@ -55,7 +56,6 @@
         <servlet-name>PasswordUpdateServlet</servlet-name>
         <servlet-class>za.ac.tut.web.PasswordUpdateServlet</servlet-class>
     </servlet>
-    
     <servlet-mapping>
         <servlet-name>ViewUserServlet</servlet-name>
         <url-pattern>/ViewUserServlet.do</url-pattern>
@@ -75,7 +75,10 @@
     <servlet-mapping>
         <servlet-name>PasswordUpdateServlet</servlet-name>
         <url-pattern>/PasswordUpdateServlet.do</url-pattern>
-
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegArtistServlet</servlet-name>
+        <url-pattern>/RegArtistServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
